@@ -2,8 +2,8 @@
 
 // const createConnection = mysql.createConnection({
 //     user: 'localhost',
-//     pass: '',
+//     password: '',
 //     database: 'ctti_database',
-//     secure: true
+//     // secure: true
 // })
 

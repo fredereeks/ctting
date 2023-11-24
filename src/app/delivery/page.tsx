@@ -10,7 +10,7 @@ export default function DeliveryPage() {
     <section className="benefits bg-white py-20 px-4">
         <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-2 items-center">
-                <h3 className="text-2xl md:text-3xl text-transparent bg-gradient-to-r from-indigo-600 to-blue-800 bg-clip-text text-center capitalize font-bold">Course Delivery Options</h3>
+                <h3 className="text-2xl md:text-3xl text-transparent bg-gradient-to-r from-primary to-blue-800 bg-clip-text text-center capitalize font-bold">Course Delivery Options</h3>
                 <p className="text-center normal-text leading-relaxed p-2 mx-auto w-[95%] md:w-[60%]">We provide you with an array of options that is guaranteed to suite your schedules at all time.</p>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-4 md:gap-6 lg:items-center md:container mx-auto md:px-5">

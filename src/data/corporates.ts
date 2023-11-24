@@ -1,6 +1,6 @@
-export const corporates = [
+export const corporates: CoachingProps[] = [
     {
-        id: 37611,
+        id: "37611",
         title: "Leadership Development Programs",
         contents: [
             "Design and implement customised leadership development programs tailored to your organisation's needs.",
@@ -9,7 +9,7 @@ export const corporates = [
         ]
     },
     {
-        id: 37612,
+        id: "37612",
         title: "Employee Career Coaching and Mentoring",
         contents: [
             "Provide one-on-one career coaching to employees at various stages of their career journey.",
@@ -18,7 +18,7 @@ export const corporates = [
         ]
     },
     {
-        id: 37613,
+        id: "37613",
         title: "Succession Planning and Talent Development",
         contents: [
             "Develop a robust succession planning framework to identify and develop future leaders wi,thin your organisation.",
@@ -27,7 +27,7 @@ export const corporates = [
         ]
     },
     {
-        id: 37614,
+        id: "37614",
         title: "Team Building and Collaboration Workshops",
         contents: [
             "Foster a culture of collaboration, innovation, and teamwork through customised workshops.",

@@ -22,8 +22,8 @@ export const catalogues = [
     {
         id: 3844,
         title: "Networking and Cybersecurity",
-        icon: <FaNetworkWired className='text-2xl text-indigo-500 group-hover:text-white md:text-3xl'/>,
-        background: "bg-indigo-100 group-hover:bg-indigo-500",
+        icon: <FaNetworkWired className='text-2xl text-primary-500 group-hover:text-white md:text-3xl'/>,
+        background: "bg-primary-100 group-hover:bg-primary-500",
         courses: [
             "Network Fundamentals ",
             "IT Essentials (Computer repairs and Maintenance)",

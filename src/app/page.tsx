@@ -54,9 +54,9 @@ export default async function Home() {
         <div className="container mx-auto justify-center grid grid-cols-2 md:grid-cols-4 py-10 px-4">
           {
             [
-              [111, <Counter key={111} speed="fast" end={2140} tag={'K+'} className='text-primary' />, "Online Learners", "border-2 border-r-indigo-50/30"],
-              [112, <Counter key={112} speed="slow" end={50} tag={'+'} className='text-primary' />, "Expert Instructors", "md:border-2 md:border-r-indigo-50/30"],
-              [113, <Counter key={113} speed="normal" end={2000} tag={'K+'} className='text-primary' />, "Validated Students", "border-2 border-r-indigo-50/30"],
+              [111, <Counter key={111} speed="fast" end={2140} tag={'K+'} className='text-primary' />, "Online Learners", "border-2 border-r-primary-50/30"],
+              [112, <Counter key={112} speed="slow" end={50} tag={'+'} className='text-primary' />, "Expert Instructors", "md:border-2 md:border-r-primary-50/30"],
+              [113, <Counter key={113} speed="normal" end={2000} tag={'K+'} className='text-primary' />, "Validated Students", "border-2 border-r-primary-50/30"],
               [114, <Counter key={114} speed="slow" end={67} tag={'+'} className='text-primary' />, "Trendy Courses", "border-0"],
             ].map(([id, stat, text, border]) => (
               <aside key={id.toString()} className={`flex flex-col p-3 items-center justify-center gap-3 text-site  border-transparent ${border}`}>
@@ -74,7 +74,7 @@ export default async function Home() {
           <aside className="col-span-2 flex flex-col justify-center gap-2 px-2 py-4">
             <h3 className="heading">Why you should choose us</h3>
             <p className="leading-[1.8] overflow-hidden text-ellipsis line-clamp-5 text-justify normal-text py-2 pr-2">At CTTI, we are committed to nurturing the next generation of IT professionals and supporting organisations in their digital transformation journeys. Whether you are a student looking to kick-start your IT career or an organisation seeking to upskill your workforce, we invite you to join us and embark on a transformative learning experience. Discover the power of knowledge with CTTI - your trusted IT training and education partner.</p>
-            <Link href="/about" className="text-slate-50 bg-gradient-to-br from-primary to-primary rounded-[2rem] mt-1 text-sm px-5 md:px-7 py-2 w-max shadow-md shadow-indigo-200">Read More</Link>
+            <Link href="/about" className="text-slate-50 bg-gradient-to-br from-primary to-primary rounded-[2rem] mt-1 text-sm px-5 md:px-7 py-2 w-max shadow-md shadow-primary-200">Read More</Link>
           </aside>
           {
             differences.map((difference) => <DiffCard key={difference.id} full={false} {...difference} />)

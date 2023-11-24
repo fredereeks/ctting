@@ -22,9 +22,10 @@ type CategoryProps = {
 }
 
 type CoachingProps = {
+    id?: string
     title: string
     contents: string[]
-    state: string
+    state?: boolean
 }
 
 type CommCardProps = {
@@ -110,8 +111,8 @@ type SideNewsCardProps = {
     images: string[];
     title: string;
     createdAt: string;
-    category: string;
-    text: string;
+    category?: string;
+    text?: string;
     _id: string;
 }
 
@@ -119,7 +120,7 @@ type SkillCardProps = {
     image: string;
     title: string;
     text: string;
-    direction: string;
+    direction: boolean;
 }
 
 type SublinksProps = {
@@ -142,13 +143,14 @@ type TextInputProps = {
 type TrainingCardProps = {
     id: string;
     background: string;
-    light: string;
+    light?: string;
     icon: JSX.Element;
     title: string;
     text: string;
 }
 
 type VirtualCardProps = {
+    id?: string
     icon: JSX.Element;
     title: string;
     text: string;

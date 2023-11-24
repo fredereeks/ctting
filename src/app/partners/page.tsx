@@ -4,7 +4,7 @@ import {PartnersCard} from '@/components'
 export default function PartnersPage() {
   return (
     <main className="bg-slate-50 py-20">
-      <div className="container pt-10 mx-auto max-w-[960px] flex flex-col">
+      <div className="container pt-10 mx-auto flex flex-col">
         <div className="flex flex-col gap-3 p-5 items-center">
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary capitalize">Our Strategic Partners</h3>
               <p style={{lineHeight: 2}} className="text-sitetext font-medium text-md md:text-base leading-loose text-justify py-2 pr-2">At CTTI, we are proud to have established strong partnerships with some of the industry&apos;s leading technology organisations. These partnerships enable us to deliver high-quality training and certifications recognised and valued worldwide. Through our collaboration with Microsoft, Cisco, Oracle, and PMI, we bring you the latest knowledge and expertise in their respective domains, ensuring that our students and clients receive the most comprehensive and up-to-date training.</p>

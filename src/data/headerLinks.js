@@ -103,7 +103,7 @@ export const headerLinks = [
     },
     {
         id: 114,
-        link: "/solutions",
+        link: "#",
         title: "Solutions",
         opened: false,
         sublinks: [

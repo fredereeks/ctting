@@ -3,8 +3,6 @@ import moment from 'moment'
 import Link from 'next/link'
 import Image from 'next/image'
 
-
-
 function SideNewsCard({images,title,createdAt, category,text,_id}: SideNewsCardProps) {
     return (<Link href={`/post/${_id}`} className="flex flex-row md:flex-col border border-slate-100 w-full bg-white gap-2 p-3 rounded-md shadow-md">
         <Image src={images[0]} alt={title} className="h-[120px] md:max-h-[180px] w-[128px] md:w-full md:w-50 object-cover bg-gradient-to-r from-slate-400 to-slate-300 rounded-md" />

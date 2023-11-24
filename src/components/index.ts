@@ -14,6 +14,7 @@ import PartnersCard from "./PartnersCard"
 import PostSkeleton from "./PostSkeleton"
 import SideNewsCard from "./SideNewsCard"
 import SideNewsSkeleton from "./SideNewsSkeleton"
+import SkillCard from "./SkillCard"
 import { TextInput } from "./TextInput"
 
 
@@ -34,5 +35,6 @@ export {
     PostSkeleton,
     SideNewsCard,
     SideNewsSkeleton,
+    SkillCard,
     TextInput,
 }

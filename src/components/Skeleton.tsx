@@ -13,7 +13,7 @@ function Skeleton({type, total}: SkeletonType) {
             </div>
             <div className="flex flex-col justify-between items-start">
                 <div className="flex flex-col gap-1">
-                <div className="text-[.6rem] px-4 bg-indigo-100 w-[30%] text-indigo-400 py-1 rounded-[2rem] my-1"></div>
+                <div className="text-[.6rem] px-4 bg-primary-100 w-[30%] text-primary-400 py-1 rounded-[2rem] my-1"></div>
                 <div className="text-md md:text-lg font-bold text-slate-500 capitalize w-[90%]"></div>
                 </div>
                 <div className="flex gap-3 items-center pt-4 pb-2">

@@ -1,6 +1,6 @@
-export const individuals = [
+export const individuals: CoachingProps[] = [
     {
-        id: 38661,
+        id: "38661",
         title: "Career Assessments and Guidance",
         contents: [
             "Discover your strengths, interests, and career aspirations through comprehensive assessments.",
@@ -9,7 +9,7 @@ export const individuals = [
         ],
     },
     {
-        id: 38662,
+        id: "38662",
         title: "Resume Writing and LinkedIn Profile Optimization",
         contents: [
             "Craft a compelling resume that highlights your key achievements and skills.",
@@ -18,7 +18,7 @@ export const individuals = [
         ],
     },
     {
-        id: 38663,
+        id: "38663",
         title: "Interview Preparation and Mock Interviews",
         contents: [
             "Gain confidence and polish your interview skills through personalised coaching.",
@@ -27,7 +27,7 @@ export const individuals = [
         ],
     },
     {
-        id: 38664,
+        id: "38664",
         title: "Personal Branding and Networking",
         contents: [
             "Develop a strong personal brand that showcases your unique value proposition.",

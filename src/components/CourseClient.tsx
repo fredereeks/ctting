@@ -30,7 +30,7 @@ export default function CourseClient({ courses, categories }: { courses: Courses
                     {
                         allCategories.map(category => (
                             <SwiperSlide key={category.id}>
-                                <button onClick={() => changeSelectedCourse(category.title)} className={`py-2 px-4 w-full flex flex-nowrap mx-2 hover:text-white whitespace-nowrap ${active === category.title ? 'bg-gradient-to-l from-blue-500 to-indigo-500 text-white' : 'hover:bg-indigo-500 hover:text-white'} rounded-sm md:rounded-br-full md:rounded-tr-full text-slate-600 text-xs md:text-sm text-center md:text-left`}>{category.title}</button>
+                                <button onClick={() => changeSelectedCourse(category.title)} className={`py-2 px-4 w-full flex flex-nowrap mx-2 hover:text-white whitespace-nowrap ${active === category.title ? 'bg-gradient-to-l from-blue-500 to-primary-500 text-white' : 'hover:bg-primary-500 hover:text-white'} rounded-sm md:rounded-br-full md:rounded-tr-full text-slate-600 text-xs md:text-sm text-center md:text-left`}>{category.title}</button>
                             </SwiperSlide>
                         ))
                     }
