@@ -39,11 +39,12 @@ export default function ContactForm({handleSubmit}: {handleSubmit: (data: FormDa
 
     return (
         <form ref={formRef} action={handleClientSubmit} className="w-full flex flex-col gap-5">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                <input type="text" placeholder='First Name' name='firstname' required className="w-full outline-none placeholder-opacity-70 my-1 text-sitetext focus:border-primary bg-transparent border border-zinc-200 rounded-md py-2 px-4" />
-                <input type="text" placeholder='Last Name' name='lastname' required className="w-full outline-none placeholder-opacity-70 my-1 text-sitetext focus:border-primary bg-transparent border border-zinc-200 rounded-md py-2 px-4" />
-                <input type="email" placeholder='Email' name='email' required className="w-full outline-none placeholder-opacity-70 my-1 text-sitetext focus:border-primary bg-transparent border border-zinc-200 rounded-md py-2 px-4" />
-                {/* <input type="phone" placeholder='Phone Number (optional)' name='phone' className="w-full outline-none placeholder-opacity-70 my-1 text-sitetext focus:border-primary bg-transparent border border-zinc-200 rounded-md py-2 px-4" /> */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 p-4">
+                <h4 className="heading lg:col-span-2">Contact us with your Enquiries</h4>
+                <input type="text" placeholder='First Name' name='firstname' required className="w-full outline-none placeholder-opacity-70 my-1 text-sitetext/80 focus:border-primary bg-transparent border border-zinc-200 rounded-md py-2 px-4" />
+                <input type="text" placeholder='Last Name' name='lastname' required className="w-full outline-none placeholder-opacity-70 my-1 text-sitetext/80 focus:border-primary bg-transparent border border-zinc-200 rounded-md py-2 px-4" />
+                <input type="email" placeholder='Email' name='email' required className="w-full outline-none placeholder-opacity-70 my-1 text-sitetext/80 focus:border-primary bg-transparent border border-zinc-200 rounded-md py-2 px-4" />
+                {/* <input type="phone" placeholder='Phone Number (optional)' name='phone' className="w-full outline-none placeholder-opacity-70 my-1 text-sitetext/80 focus:border-primary bg-transparent border border-zinc-200 rounded-md py-2 px-4" /> */}
                 <div className="flex w-full gap-1 py-2 border border-zinc-200 bg-transparent rounded-md overflow-hidden">
                     <PhoneInput
                         onChange={(value) => setPhone(value)}
@@ -59,12 +60,12 @@ export default function ContactForm({handleSubmit}: {handleSubmit: (data: FormDa
                         flags={flags}
                         limitMaxLength={true}
                         smartCaret={false}
-                        className='w-full outline-none placeholder-opacity-70 text-sitetext bg-transparent rounded-md px-4 flex-1'
+                        className='w-full outline-none placeholder-opacity-70 text-sitetext/80 bg-transparent rounded-md px-4 flex-1'
                     />
                 </div>
-                <textarea placeholder='Would be interested in knowing your drive (optional)' name='message' className="w-full outline-none placeholder-opacity-70 my-1 text-sitetext focus:border-primary bg-transparent border border-zinc-200 rounded-md py-4 px-4 col-start-1 h-[12rem] lg:col-span-2 resize-y" ></textarea>
+                <textarea placeholder='Would be interested in knowing your drive (optional)' name='message' className="w-full outline-none placeholder-opacity-70 my-1 text-sitetext/80 focus:border-primary bg-transparent border border-zinc-200 rounded-md py-4 px-4 col-start-1 h-[12rem] lg:col-span-2 resize-y" ></textarea>
+                <button type="submit" disabled={pending} className="text-gray-50 bg-[#ec1c3e] rounded-[2rem] w-max px-8 py-2 text-sm md:text-md shadow-lg cursor-pointer shadow-[#ec1c3e]">{pending ? 'Processing...' : 'Send Message'}</button>
             </div>
-            <button type="submit" disabled={pending} className="text-gray-50 bg-[#ec1c3e] rounded-[2rem] w-max px-4 py-2 text-sm md:text-md shadow-lg cursor-pointer shadow-[#ec1c3e]">{pending ? 'Processing...' : 'Send Message'}</button>
         </form>
     )
 }

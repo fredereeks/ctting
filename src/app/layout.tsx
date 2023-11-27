@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`bg-slate-50 pt-10 ${roboto.className}`}>
+      <body className={`bg-slate-50 min-h-screen pt-10 ${roboto.className}`}>
         <Toaster />
         <Header />
         <ClientLayout>

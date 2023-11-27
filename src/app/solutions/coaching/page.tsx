@@ -9,7 +9,7 @@ function Coaching() {
   return (
     <main className="bg-slate-50 pb-20">
       <section className="bg-primary pt-20 pb-10 px-4">
-        <div className="container relative mx-auto max-w-[980px] flex flex-col">
+        <div className="container relative mx-auto   flex flex-col">
           <div className="flex flex-wrap gap-2 items-center pt-5 pb-10 text-slate-50">
             <Link href="/" className="font-bold hover:text-slate-50 px-2 text-md md:text-lg text-white  ">Home</Link>
             /

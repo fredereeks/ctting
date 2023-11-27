@@ -23,7 +23,7 @@ export default function HomeSlider() {
       modules={[Autoplay]}
       autoplay={true}
       loop={true}
-      direction='vertical'
+      direction='horizontal'
       effect='fade'
     > {
         slides.map(slide => (

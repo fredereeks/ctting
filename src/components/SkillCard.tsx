@@ -16,8 +16,8 @@ function SkillCard({image, title, text, direction} : SkillCardProps) {
             <Image src={image} alt={title} className="transition-all duration-300 h-full w-full rounded-md hover:shadow-xl shadow-lg object-cover scale-100 group-hover:scale-150" />
         </div>
         <div className="flex-1 flex flex-col justify-center gap-2 py-4 flex-shrink-0 ">
-            <h4 className={`heading text-primary`}>{title}</h4>
-            <p style={{lineHeight: 2}} className="text-sitetext text-justify text-md md:text-base leading-loose py-2 pr-2">{text}</p>
+            <h4 className={`heading text-2xl text-primary`}>{title}</h4>
+            <p style={{lineHeight: 2}} className="text-sitetext/80 text-justify text-md md:text-lg leading-loose py-2 pr-2">{text}</p>
         </div>
     </aside>
   )

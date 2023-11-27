@@ -1,0 +1,109 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+
+enum UserType {
+  User
+  Admin
+}
+
+enum Status {
+  Pending
+  Active
+  Suspended
+}
+
+
+model Category {
+  id String @id @default(cuid())
+  name String @db.VarChar(200) @unique
+  courses Course[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+  updatedBy String?
+}
+
+model Contact {
+  id String @id @default(cuid())
+  firstname String
+  middlename String?
+  lastname String
+  email String @unique
+  photo String
+  country String?
+  state String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+  updatedBy String?
+}
+
+model Course {
+  id String @id @default(cuid())
+  title String @db.VarChar(100)
+  price Int?
+  duration String
+  category Category @relation(fields: [categoryId], references: [id])
+  categoryId String
+  enquiry Enquiry[]
+  rating Rating[]
+  status Status @default(Active)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+  updatedBy String?
+}
+
+model Enquiry {
+  id String @id @default(cuid())
+  firstname String
+  middlename String?
+  lastname String
+  email String @unique
+  photo String
+  country String?
+  state String?
+  course Course @relation(fields: [courseId], references: [id])
+  courseId String @unique 
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+  updatedBy String?
+}
+
+model User {
+  id String @id @default(cuid())
+  firstname String
+  middlename String?
+  lastname String
+  email String @unique
+  phone String @unique
+  photo String?
+  status Status @default(Pending)
+  type UserType @default(User)
+  token String? @db.VarChar(40)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+  updatedBy String?
+}
+
+model Rating {
+  id String @id @default(cuid())
+  firstname String
+  middlename String?
+  lastname String
+  email String @unique
+  course Course @relation(fields: [courseId], references: [id])
+  courseId String @unique
+  value Int
+  text String @db.VarChar(300)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+  updatedBy String?
+}

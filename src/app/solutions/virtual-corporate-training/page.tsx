@@ -14,7 +14,7 @@ function VirtualCorporateTraining() {
         <div className="container relative mx-auto pt-10 px-4 flex flex-col">
             <div className="flex flex-col gap-3 p-5 items-center">
               <h3 className="heading text-primary capitalize">Virtual Corporate Training</h3>
-                  <p className="normal-text text-sitetext leading-loose text-center py-2 pr-2">At CTTI, we are dedicated to supporting your organisation&apos;s growth and success through comprehensive skills assessment services.</p>
+                  <p className="normal-text text-sitetext/80 leading-loose text-center py-2 pr-2">At CTTI, we are dedicated to supporting your organisation&apos;s growth and success through comprehensive skills assessment services.</p>
             </div>
             {/* <aside className={`group py-0 px-4 flex flex-col items-stretch sm:items-center md:items-stretch gap-3 md:gap-5 md:flex-row`}>
                 <div className="relative flex-1 mx-auto flex h-full w-full py-4 md:w-[400px] flex-shrink-0 group-hover:shad bg-white rounded-md overflow-hidden rounded-ss-[2rem] rounded-se-[2rem]">
@@ -29,7 +29,7 @@ function VirtualCorporateTraining() {
       </section>
       <section className="bg-slate-50">
         <div className="container relative mx-auto pb-20 pt-5 px-4 flex flex-col">
-            <div className="grid grid-cols-1 sm:grid-cols-2 justify-center gap-5 py-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center gap-5 py-10">
               {
                 virtuals.map((virtual) => {
                   return (<VirtualCard key={virtual.id} {...virtual} />)

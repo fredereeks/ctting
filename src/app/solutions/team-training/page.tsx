@@ -8,8 +8,8 @@ function TeamTraining() {
 
   return (
     <main className="flex flex-col bg-white">
-        <section className="bg-blue-800 py-20 px-4">
-          <div className="container relative mx-auto max-w-[980px] flex flex-col">
+        <section className="bg-primary py-20 px-4">
+          <div className="container relative mx-auto flex flex-col">
             <div className="flex flex-wrap gap-2 items-center pt-5 pb-10 text-slate-50">
               <Link href="/" className="font-bold hover:text-slate-50 px-2 text-md md:text-lg text-white  ">Home</Link>
               /
@@ -38,7 +38,7 @@ function TeamTraining() {
           {/* <img src={category_2} alt="" className="absolute w-full h-full z-2 top-0 left-0 object-cover" /> */}
           <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-6 justify-center container px-5 py-10 mx-auto">
               {/* <h2 className="col-span-1 sm:col-span-2 text-2xl md:text-4xl text-primary pt-0 pb-10 text-center font-bold">CTTI Advantages for Corporate and Government Clients</h2> */}
-              <h3 className="col-span-1 sm:col-span-2 pb-10 text-2xl md:text-4xl font-bold text-cyan-500 mx-auto max-w-[90%] sm:max-w-[80%] text-center leading-tight capitalize">Advantages to our Corporate and Government Clients </h3>
+              <h3 className="col-span-1 sm:col-span-2 pb-10 text-2xl md:text-4xl font-bold text-primary mx-auto max-w-[90%] sm:max-w-[80%] text-center leading-tight capitalize">Advantages to our Corporate and Government Clients </h3>
             {
               trainings.map((training,i) => {
                 const light = i % 2 === 1 ? "-translate-y-4 hover:translate-y-0" : "hover:-translate-y-4 translate-y-0"

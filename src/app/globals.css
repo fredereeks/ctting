@@ -43,15 +43,15 @@
   }
 
   .bold-text {
-    @apply text-sitetext text-sm sm:text-base md:text-lg font-bold;
+    @apply text-sitetext/80 text-sm sm:text-base md:text-lg font-bold;
   }
 
   .thin-text {
-    @apply text-sitetext text-sm sm:text-base md:text-lg font-normal;
+    @apply text-sitetext/80 text-sm sm:text-base md:text-lg font-normal;
   }
 
   .normal-text {
-    @apply text-sitetext text-sm sm:text-base md:text-lg font-medium;
+    @apply text-sitetext/80 text-sm sm:text-base md:text-lg font-medium;
   }
 
   .styled-heading {
@@ -59,7 +59,7 @@
   }
 
   .dark-heading {
-    @apply text-sitetext;
+    @apply text-sitetext/80;
   }
 
   

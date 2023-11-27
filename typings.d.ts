@@ -12,6 +12,15 @@ type BtnProps = {
     text: string
 }
 
+type CatalogueProps = {
+    id: string;
+    title: string;
+    icon: React.JSX.Element;
+    background: string;
+    courses: string[];
+    delivery: string;
+}
+
 type CategoryProps = {
     id: number
     icon: JSX.Element
@@ -21,7 +30,7 @@ type CategoryProps = {
     delivery: string
 }
 
-type CoachingProps = {
+type CorporateProps = {
     id?: string
     title: string
     contents: string[]

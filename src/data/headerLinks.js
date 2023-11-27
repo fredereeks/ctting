@@ -86,8 +86,8 @@ export const headerLinks = [
             },
             {
                 id: 1142,
-                link: "/cerfitications",
-                title: "Cerfitications"
+                link: "/certifications",
+                title: "Certifications"
             },
             {
                 id: 1143,

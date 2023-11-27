@@ -1,12 +1,12 @@
 // import { blog_slider1, blog_slider2, blog_slider3, masonry2, masonry4, masonry6, masonry8 } from '../assets/images'
-import {FaBriefcase, FaBuilding, FaCloudMeatball,  FaMicrosoft, FaNetworkWired, FaPalette, FaProjectDiagram} from 'react-icons/fa' 
+import {FaBriefcase, FaBuilding, FaCloudMeatball,  FaDatabase,  FaMicrosoft, FaNetworkWired, FaPalette, FaProjectDiagram} from 'react-icons/fa' 
 import {IoIosAnalytics, IoIosCode, IoIosCodeDownload} from 'react-icons/io' 
 
-export const catalogues = [
+export const catalogues: CatalogueProps[] = [
     {
-        id: 3894,
+        id: "87353894",
         title: "Programming and Development",
-        icon: <IoIosCode className='text-2xl text-primary group-hover:text-white md:text-3xl'/>,
+        icon: <IoIosCode className='text-2xl text-primary group-hover:text-white md:text-3xl' />,
         background: "bg-sky-100 group-hover:bg-primary",
         courses: [
             "Java Programming- Full stack",
@@ -20,7 +20,7 @@ export const catalogues = [
     },
 
     {
-        id: 3844,
+        id: "87353844",
         title: "Networking and Cybersecurity",
         icon: <FaNetworkWired className='text-2xl text-primary-500 group-hover:text-white md:text-3xl'/>,
         background: "bg-primary-100 group-hover:bg-primary-500",
@@ -36,7 +36,7 @@ export const catalogues = [
         delivery: "Classroom, Virtual, Hybrid",
     },
     {
-        id: 3828,
+        id: "87353828",
         icon: <FaMicrosoft className='text-2xl text-amber-500 group-hover:text-white md:text-3xl'/>,
         title: "Business Applications",
         background: "bg-amber-100 group-hover:bg-amber-500",
@@ -51,7 +51,7 @@ export const catalogues = [
     },
 
     {
-        id: 3895,
+        id: "87353895",
         icon: <FaCloudMeatball className='text-2xl text-purple-500 group-hover:text-white md:text-3xl'/>,
         title: "Cloud Computing and Virtualization",
         background: "bg-purple-100 group-hover:bg-purple-500",
@@ -63,7 +63,7 @@ export const catalogues = [
         delivery: "Classroom, Virtual, Hybrid",
     },
     {
-        id: 3134,
+        id: "87353134",
         icon: <IoIosAnalytics className='text-2xl text-orange-500 group-hover:text-white md:text-3xl'/>,
         title: "Data Science and Analytics",
         background: "bg-orange-100 group-hover:bg-orange-500",
@@ -79,7 +79,7 @@ export const catalogues = [
     },
 
     {
-        id: 3224,
+        id: "87353224",
         icon: <FaProjectDiagram className='text-2xl text-pink-500 group-hover:text-white md:text-3xl'/>,
         title: "Project Management",
         background: "bg-pink-100 group-hover:bg-pink-500",
@@ -92,7 +92,7 @@ export const catalogues = [
         delivery: "Classroom, Virtual, Hybrid",
     },
     {
-        id: 3894,
+        id: "87353894",
         icon: <FaDatabase className='text-2xl text-blue-500 group-hover:text-white md:text-3xl'/>,
         title: "Database Administration",
         background: "bg-blue-100 group-hover:bg-blue-500",
@@ -105,7 +105,7 @@ export const catalogues = [
         delivery: "Classroom, Virtual, Hybrid",
     },
     {
-        id: 3877,
+        id: "87353877",
         icon: <IoIosCodeDownload className='text-2xl text-teal-500 group-hover:text-white md:text-3xl'/>,
         title: "IT Service Management",
         background: "bg-teal-100 group-hover:bg-teal-500",
@@ -117,7 +117,7 @@ export const catalogues = [
         delivery: "Classroom, Virtual, Hybrid",
     },
     {
-        id: 3894,
+        id: "87353894",
         icon: <FaBriefcase className='text-2xl text-fuchsia-500 group-hover:text-white md:text-3xl'/>,
         title: "Business Analysis",
         background: "bg-fuchsia-100 group-hover:bg-fuchsia-500",
@@ -130,11 +130,11 @@ export const catalogues = [
         delivery: "Classroom, Virtual, Hybrid",
     },
     {
-        id: 3823,
+        id: "87353823",
         icon: <FaBuilding className='text-2xl text-red-500 group-hover:text-white md:text-3xl'/>,
         title: "Leadership",
         background: "bg-red-100 group-hover:bg-red-500",
-        course: [
+        courses: [
             "Business Skills",
             "Business Leadership ",
             "Soft Skills",
@@ -143,7 +143,7 @@ export const catalogues = [
         delivery: "Classroom, Virtual, Hybrid",
     },
     {
-        id: 3894,
+        id: "87353894",
         icon: <FaPalette className='text-2xl text-cyan-500 group-hover:text-white md:text-3xl'/>,
         title: "Design",
         background: "bg-cyan-100 group-hover:bg-cyan-500",

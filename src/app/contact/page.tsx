@@ -6,7 +6,6 @@ import { courses } from '@/data';
 import ContactForm from '@/components/ContactForm';
 import Image from 'next/image';
 import { ctti_business } from '@/assets/images';
-import { randomUUID } from 'crypto';
 import { revalidatePath } from 'next/cache';
 
 export const metadata: Metadata = {
@@ -54,7 +53,6 @@ const handleSubmit = async (data: FormData) => {
       }
     })
 
-    console.log(randomUUID())
     // const userMail = typeof(email) === 'string' ? email.toString() || "invalidmail@gmail.com"
 
     const info = transport.sendMail({
@@ -101,7 +99,7 @@ export default async function ContactPage() {
       </section>
       <section className="bg-gray-50 px-4">
         <div className="container relative mx-auto py-10 flex flex-col overflow-hidden">
-          <h3 className="py-2 px-3 text-sitecolor border-0 border-l-[3px] border-l-sitecolor font-bold text-lg md:text-xl">Suggested Courses for you</h3>
+          <h3 className="py-2 px-3 heading border-l-[3px] border-l-gray-300 font-bold text-lg md:text-2xl">Suggested Courses for you</h3>
           <div className="col-span-1 md:col-span-3 pt-6 pb-4 grid course__wrap gap-3" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}>
             {
               courses.filter(course => course.featured === true).slice(0, 4).reverse().map(course => <CourseCard key={course.id} {...course} />)
