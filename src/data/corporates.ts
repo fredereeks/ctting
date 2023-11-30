@@ -1,4 +1,4 @@
-export const corporates: CorporateProps[] = [
+export const corporates: CorporateAndCoachingProps[] = [
     {
         id: "37611",
         title: "Leadership Development Programs",

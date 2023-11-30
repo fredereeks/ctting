@@ -14,6 +14,7 @@ const config: Config = {
         primary: "#2196F3",
         gradient: "rgb(32, 148, 243)",
         sitetext: "#1F1F1F",
+        danger: "#f34f7c",
       },
     },
   },

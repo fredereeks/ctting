@@ -88,21 +88,20 @@ function Header() {
         <div ref={header} className={`bg-white z-[999] p-2 fixed ${fixed ? 'shadow-md shadow-black/20' : 'shadow-none'} w-full left-0 top-0`}>
             <div className="container mx-auto flex justify-between items-center md:gap-3">
                 <div className="lg:width-[600px] flex flex-start">
-                    <Link href="/" className='w-[70px] h-[70px] mt-2 text-gray-100'>
-                        <Image src={logo} alt="CTTI Logo" className="w-full h-[60px] object-contain sm:object-contain" />
+                    <Link href="/" className='w-[80px] h-[80px] mt-0 text-gray-100'>
+                        <Image src={logo} alt="CTTI Logo" className="w-full h-[80px] object-contain sm:object-contain" />
                     </Link>
                 </div>
                 <div ref={navRef} className={`flex-1 sm:flex-4 flex flex-col lg:flex-row lg:justify-center lg:pl-[6rem] absolute border-0 md:border-t md:border-primary lg:border-0 lg:static shadow-md transition-all duration-300 ${navshow ? 'left-0 top-full z-50' : 'left-[110%] lg:left-0 z-0 top-full'} lg:top-0 w-screen lg:w-max lg:shadow-none bg-white lg:mx-0`}>
                     <ul className="list-style-none mx-auto w-full flex flex-col md:flex-1 md:flex-row md:justify-center md:items-center gap-2">
                         {
-                            // headerLinks.map((link) => <LinkCard key={link.id} {...link} dropdown={dropdowns[link.title.toLowerCase()]} onClick={toggleDropdown} />)
                             headerLinks.map((link) => <LinkCard key={link.id} {...link} onClick={toggleDropdown} />)
                         }
                     </ul>
                     <div className="lg:ml-auto flex flex-col justify-center pt-1 h-full w-full lg:w-max md:flex-row lg:gap-3">
-                        <Link href="/login" className="text-sm grid place-items-center text-primary lg:rounded-md h-10 lg:h-8 w-full lg:w-max px-2 lg:px-4 relative">Login
+                        <Link href="/auth/login" className="text-sm grid place-items-center text-primary lg:rounded-md h-10 lg:h-8 w-full lg:w-max px-2 lg:px-4 relative border border-primary hover:bg-primary/90 hover:text-white">Login
                         </Link>
-                        <Link href="/enquiry" className="text-sm grid place-items-center text-white bg-primary lg:rounded-md h-10 lg:h-8 w-full lg:w-max px-2 lg:px-4 relative">Make Enquiry
+                        <Link href="/enquiry" className="text-sm grid place-items-center text-white bg-primary hover:bg-primary/90 lg:rounded-md h-10 lg:h-8 w-full lg:w-max px-2 lg:px-4 relative">Make Enquiry
                         </Link>
                     </div>
                 </div>

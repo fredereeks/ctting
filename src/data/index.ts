@@ -4,6 +4,7 @@ import {corporates} from "./corporates"
 import {courses} from "./courses"
 import {headerLinks} from "./headerLinks"
 import {individuals} from "./individuals"
+import {navLinks} from "./navLinks"
 import {partners} from "./partners"
 import {skills} from "./skills"
 import {slides} from "./slides"
@@ -17,6 +18,7 @@ export {
     courses,
     headerLinks,
     individuals,
+    navLinks,
     partners,
     skills,
     slides,

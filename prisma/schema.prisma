@@ -11,9 +11,10 @@ datasource db {
 }
 
 
-enum UserType {
-  User
-  Admin
+enum BatchType {
+  Morning
+  Afternoon
+  Evening
 }
 
 enum Status {
@@ -21,6 +22,13 @@ enum Status {
   Active
   Suspended
 }
+
+enum UserType {
+  User
+  Instructor
+  Admin
+}
+
 
 
 model Category {
@@ -37,10 +45,11 @@ model Contact {
   firstname String
   middlename String?
   lastname String
-  email String @unique
-  photo String
+  email String 
+  phone String 
   country String?
   state String?
+  message String
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
   updatedBy String?
@@ -51,14 +60,35 @@ model Course {
   title String @db.VarChar(100)
   price Int?
   duration String
+  description String?
   category Category @relation(fields: [categoryId], references: [id])
   categoryId String
   enquiry Enquiry[]
   rating Rating[]
+  instructors Instructor[]
+  batches Batch[]
   status Status @default(Active)
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
   updatedBy String?
+}
+
+
+model Instructor {
+  id String @id @default(cuid())
+  user User? @relation(fields: [userId], references: [id])
+  userId String
+  course Course? @relation(fields: [courseId], references: [id])
+  courseId String
+}
+
+model Batch {
+  id String @id @default(cuid())
+  startDate DateTime
+  month String
+  type BatchType @default(Morning)
+  course Course? @relation(fields: [courseId], references: [id])
+  courseId String
 }
 
 model Enquiry {
@@ -66,8 +96,11 @@ model Enquiry {
   firstname String
   middlename String?
   lastname String
-  email String @unique
-  photo String
+  email String 
+  phone String?
+  image String?
+  type UserType @default(User)
+  message String @db.MediumText()
   country String?
   state String?
   course Course @relation(fields: [courseId], references: [id])
@@ -84,7 +117,10 @@ model User {
   lastname String
   email String @unique
   phone String @unique
-  photo String?
+  password String
+  image String?
+  course Instructor[]
+  address String? @db.MediumText()
   status Status @default(Pending)
   type UserType @default(User)
   token String? @db.VarChar(40)

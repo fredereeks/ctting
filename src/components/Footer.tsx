@@ -26,16 +26,15 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="flex flex-col">
-                    <h3 className="text-md md:text-xl font-bold text-primary pb-2 uppercase">Working Hours</h3>
+                    <h3 className="text-md md:text-xl heading pb-2 uppercase">Working Hours</h3>
                     <div className="flex flex-col gap-1">
                         <p className="text-xs md:text-sm text-slate-600 text-justify">Monday - Friday: 8:00AM - 5:00PM.</p>
                         <p className="text-xs md:text-sm text-slate-600 text-justify">Saturday: 9:00AM - 2:00PM.</p>
-                        {/* <p className="text-xs md:text-sm text-slate-600 text-justify">Sunday (Open)</p> */}
-                        <p className="text-xs md:text-sm text-slate-600 text-justify">admin@ctti.ng</p>
+                        <Link className="text-xs md:text-sm text-slate-600 text-justify" href="mailto:admin@ctti.ng">admin@ctti.ng</Link>
                     </div>
                 </div>
                 <div className="flex flex-col">
-                    <h3 className="text-md md:text-xl font-bold text-primary pb-2 uppercase">WE ARE HERE</h3>
+                    <h3 className="text-md md:text-xl heading pb-2 uppercase">WE ARE HERE</h3>
                     <div className="flex flex-col gap-1">
                         <p className="text-xs md:text-sm text-slate-600 text-justify">House 2, &apos;A&apos; Close, 45 Road, Off 4th Avenue, Gwarinpa, Abuja</p>
                          <p className="text-xs md:text-sm text-slate-600 text-justify">+2349152200170</p>

@@ -5,7 +5,8 @@ import { StaticImageData } from 'next/image';
 import React, { useState } from 'react'
 import { CourseCard } from '.';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay } from 'swiper/modules'
 import 'swiper/css';
 
 type CoursesProps = { id: string; image: StaticImageData; category: string; title: string; users: number; rating: number; description: string; duration: string; featured: boolean; requisite: string[]; contents: string[]; }
@@ -24,13 +25,18 @@ export default function CourseClient({ courses, categories }: { courses: Courses
             <div className="flex flex-row py-5 px-4 bg-slate-100">
                 <Swiper
                     spaceBetween={10}
-                    slidesPerView={6}
-                    // grid={{rows: 6}}
+                    slidesPerView={4}
+                    // fadeEffect={}
+                    allowTouchMove={true}
+                    draggable={true}
+                    modules={[Autoplay]}
+                    autoplay={true}
+                    loop={true}
                 >
                     {
                         allCategories.map(category => (
                             <SwiperSlide key={category.id}>
-                                <button onClick={() => changeSelectedCourse(category.title)} className={`py-2 px-4 w-full flex flex-nowrap mx-2 hover:text-white whitespace-nowrap ${active === category.title ? 'bg-gradient-to-l from-blue-500 to-primary-500 text-white' : 'hover:bg-primary-500 hover:text-white'} rounded-sm md:rounded-br-full md:rounded-tr-full text-slate-600 text-xs md:text-sm text-center md:text-left`}>{category.title}</button>
+                                <button onClick={() => changeSelectedCourse(category.title)} className={`py-2 px-4 w-max flex flex-nowrap mx-2 hover:text-white whitespace-nowrap ${active === category.title ? 'bg-primary text-white' : 'hover:bg-primary/90 hover:text-white'} rounded-sm md:rounded-br-full md:rounded-tr-full text-slate-600 text-xs md:text-sm text-center md:text-left`}>{category.title}</button>
                             </SwiperSlide>
                         ))
                     }

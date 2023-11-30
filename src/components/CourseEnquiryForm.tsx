@@ -4,9 +4,9 @@ import React, { useRef, useState } from 'react'
 import toast from 'react-hot-toast';
 import PhoneInput from 'react-phone-number-input'
 import flags from 'react-phone-number-input/flags';
+import {handleSubmit} from "@/actions"
 
-
-export default function CourseEnquiryForm({title, handleSubmit} : {title: string, handleSubmit: (data: FormData) => Promise<{message: string, error: boolean}>}) {
+export default function CourseEnquiryForm({title} : {title: string }) {
     const formRef = useRef<HTMLFormElement | null>(null)
     const [pending, setPending] = useState<boolean>(false)
     const [phone, setPhone] = useState<string | undefined>('')

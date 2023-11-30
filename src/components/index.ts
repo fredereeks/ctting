@@ -9,11 +9,13 @@ import DiffCard from "./DiffCard"
 import Footer from "./Footer"
 import Header from "./Header"
 import LinkCard from "./LinkCard"
+import LoginForm from "./LoginForm"
 import NewsCard from "./NewsCard"
 import PartnersCard from "./PartnersCard"
 import PostSkeleton from "./PostSkeleton"
 import SideNewsCard from "./SideNewsCard"
 import SideNewsSkeleton from "./SideNewsSkeleton"
+import SignupForm from "./SignupForm"
 import SkillCard from "./SkillCard"
 import { TextInput } from "./TextInput"
 
@@ -30,11 +32,13 @@ export {
     Footer,
     Header,
     LinkCard,
+    LoginForm,
     NewsCard,
     PartnersCard,
     PostSkeleton,
     SideNewsCard,
     SideNewsSkeleton,
+    SignupForm,
     SkillCard,
     TextInput,
 }

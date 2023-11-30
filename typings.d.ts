@@ -30,7 +30,7 @@ type CategoryProps = {
     delivery: string
 }
 
-type CorporateProps = {
+type CorporateAndCoachingProps = {
     id?: string
     title: string
     contents: string[]
@@ -45,9 +45,7 @@ type CommCardProps = {
     replies?: ReplyProps[]
 }
 
-
-
-type CourseCardProps = { 
+type CourseCardProps = {
     id: string;
     image: StaticImageData;
     category: string;
@@ -60,7 +58,7 @@ type CourseCardProps = {
     requisite?: string[];
     contents?: string[];
     key?: string;
- }
+}
 
 type DiffCardProps = {
     id: number
@@ -87,6 +85,8 @@ type DropdownProps = {
     solutions: string | boolean
     resources: string | boolean
 }
+
+type EnquiryProps = { id: string; firstname: string; middlename: string | null; lastname: string; email: string; phone: string | null; message: string; country: string | null; state: string | null; courseId: string; createdAt: Date; updatedAt: Date; updatedBy: string | null; }
 
 type LinkCardType = {
     title: string
@@ -158,9 +158,27 @@ type TrainingCardProps = {
     text: string;
 }
 
+type UserProps = {
+    id: string
+    firstname: string
+    middlename?: string
+    lastname: string
+    email: string
+    phone: string
+    password?: string
+    image?: string
+    address?: string
+    type?: "Admin" | "User"
+    status?: "Pending" | "Active" | "Suspended"
+    token?: string
+    createdAt?: string | Date 
+    updatedAt?: string | Date 
+    updatedBy?: string
+}
+
 type VirtualCardProps = {
     id?: string
     icon: JSX.Element;
     title: string;
     text: string;
-  }
+}
