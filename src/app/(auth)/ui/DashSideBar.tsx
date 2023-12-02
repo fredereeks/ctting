@@ -4,9 +4,10 @@ import React, { Dispatch, SetStateAction, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { navLinks } from '@/data'
-import { IoCaretDown, IoFileTrayStackedSharp, IoLogOutOutline } from 'react-icons/io5'
+import { IoLogOutOutline } from 'react-icons/io5'
 import Image from 'next/image'
 import { logo } from '@/assets/images'
+import {signOut} from 'next-auth/react'
 
 
 
@@ -69,11 +70,11 @@ export default function DashSideBar({ navShow, setNavShow }: { navShow: boolean;
                         <p className="text-slate-700 dark:text-slate-50 text-xs opacity-50 font-medium">Dashboard</p>
                     </div>
                 </Link>
-                <div className="flex flex-col gap-2 py-5 overflow-y-auto">
+                <div className="relative flex-1 flex flex-col gap-2 py-5 x-scrollbar overflow-x-hidden">
                     <div className="flex flex-col gap-2">
                         <h3 className="text-slate-400 text-[.6rem] font-semibold whitespace-nowrap uppercase">Account</h3>
                     </div>
-                    <div className="flex flex-col gap-2 py-5 border-t border-t-slate-200 overflow-scroll x-scrollbar">
+                    <div className="flex-1 flex flex-col gap-2 py-5 border-t border-t-slate-200 overflow-scroll x-scrollbar">
                         {
                             navLinks?.map((navLink, i) => {
                                 const active = (navLink.title === page) ? 'bg-slate-200/30 dark:bg-white/10' : 'bg-white dark:bg-transparent dark:hover:bg-white/10'
@@ -85,14 +86,12 @@ export default function DashSideBar({ navShow, setNavShow }: { navShow: boolean;
                                 </Link>)
                             })
                         }
-                        <Link href={"/auth/login"} className={`flex gap-2 mt-10 p-1 transition-all duration-300 rounded-md bg-danger dark:bg-transparent dark:hover:bg-white/10`}>
-                            <div className={`grid place-items-center w-7 h-7 rounded-full`}>
-                                <span className='dark:bg-red-200 text-white text-sm sm:text-base h-6 w-6 rounded-full flex justify-center items-center'><IoLogOutOutline className='text-inherit ' /></span>
-                            </div>
-                            <div className="flex flex-col justify-center">
-                                <h4 className="text-slate-50 dark:text-slate-50 text-[.7rem] sm:text-xs dark:opacity-80">Logout</h4>
-                            </div>
-                        </Link>
+                        <div className="absolute left-1/2 -translate-x-1/2 bottom-10 w-[110%] p-2">
+                            <button onClick={() => signOut()} className={`flex justify-center items-center gap-2 w-full translate-y-12 justify-self-end p-2 transition-all duration-300 rounded-md bg-danger hover:bg-danger/90`}>
+                                <IoLogOutOutline className='text-white text-sm sm:text-base ' />
+                                <h4 className="text-slate-50 text-xs">Logout</h4>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </section>

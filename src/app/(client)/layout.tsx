@@ -5,6 +5,7 @@ import 'aos/dist/aos.css';
 import { Header, Footer } from '@/components'
 import { Toaster } from 'react-hot-toast'
 import ClientLayout from '@/components/ClientLayout'
+import { Provider } from '@/provider';
 
 const roboto = Roboto({ subsets: ['latin'], weight: ["100", "300", "400", "500", "700", "900"] })
 
@@ -23,9 +24,11 @@ export default function RootLayout({
       <body className={`bg-slate-50 min-h-screen pt-10 ${roboto.className}`}>
         <Toaster />
         <Header />
-        <ClientLayout>
-          {children}
-        </ClientLayout>
+        <Provider>
+          <ClientLayout>
+            {children}
+          </ClientLayout>
+        </Provider>
         <Footer />
       </body>
     </html>

@@ -4,13 +4,14 @@ import React from 'react'
 import { FaUserAlt } from 'react-icons/fa'
 import { IoMdStarOutline } from 'react-icons/io'
 import Link from 'next/link'
-import { randomColor } from '../utils'
+import { randomNumber } from '../utils'
 import { IoTimeOutline } from 'react-icons/io5'
 import Image from 'next/image'
 
 function CourseCard({id, image, title, rating, duration, users, category} : CourseCardProps) {
+  const delay = randomNumber(2, 5) >= 3 ? "600" : "800";
 return (
-    <Link href={`/courses/${category.toLowerCase().replaceAll(" ", "-")}/${id.toString()}`} className="bg-white flex flex-col gap-2 max-w-[25rem] group shadow-lg hover:shadow-2xl rounded-base transition-all duration-300">
+    <Link data-aos-duration="1000" data-aos-delay={delay} data-aos={"fade-up"} href={`/courses/${category.toLowerCase().replaceAll(" ", "-")}/${id.toString()}`} className="bg-white flex flex-col gap-2 max-w-[25rem] group shadow-lg hover:shadow-2xl rounded-base transition-all duration-300">
         <div className={`relative h-[130px] sm:h-[200px] w-full hover:rounded-none rounded-md rounded-br-none rounded-bl-none grid place-items-center overflow-hidden bg-primary`}>
             <Image src={image} alt={title} className="absolute w-full h-full top-0 left-0 object-cover" />
         </div>

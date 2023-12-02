@@ -1,12 +1,10 @@
 "use client"
+import { handleSubscription } from '@/actions'
 // import { handleSubscription } from '@/actions'
 import React, { FormEvent, useRef, useTransition } from 'react'
 import toast from 'react-hot-toast'
 
-export default function SubscriptionForm({ handleSubscription}: {handleSubscription: (data: FormData) => Promise<{
-    error: boolean;
-    message: string;
-} | undefined>}) {
+export default function SubscriptionForm() {
     const [isPending, startTransition] = useTransition()
     const formRef = useRef<HTMLFormElement | null>(null)
     const handleSubmit = async (e: FormEvent) => {
@@ -15,7 +13,7 @@ export default function SubscriptionForm({ handleSubscription}: {handleSubscript
             if (formRef?.current) {
                 const formData = new FormData(formRef?.current)
                 const res = await handleSubscription(formData)
-                toast.success(res?.message || 'Success', { id: '8014' })
+                toast.success(res.message || 'Success', { id: '8014' })
             }
             else {
                 toast.error('Something went wrong. Please, try again', { id: '8014' })

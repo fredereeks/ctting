@@ -9,14 +9,11 @@ import Link from 'next/link'
 import toast from 'react-hot-toast'
 import { IoPeopleOutline } from 'react-icons/io5'
 import { MdQuestionAnswer } from 'react-icons/md'
-
-type EnquiryProps = { id: string; firstname: string; middlename?: string | null; lastname: string; email: string; phone: string | null; message: string; country?: string | null; state?: string | null; courseId: string; createdAt?: Date | string; updatedAt?: Date | string; updatedBy?: string | null; }
-
+import { Course } from '@prisma/client'
 
 export default function EnquiryList({ enquiryData }: { enquiryData: EnquiryProps[] }) {
     const [allTableData, setAllTableData] = useState<EnquiryProps[] | []>(enquiryData)
     const [tableData, setTableData] = useState<EnquiryProps[] | []>(enquiryData)
-    const modalRef = useRef<HTMLDialogElement | null>(null)
     const previewRef = useRef<HTMLDialogElement | null>(null)
     const inputRef = useRef<HTMLInputElement | null>(null)
     const [selectedEnquiry, setSelectedEnquiry] = useState<EnquiryProps>()
@@ -41,13 +38,13 @@ export default function EnquiryList({ enquiryData }: { enquiryData: EnquiryProps
             setTableData(allTableData)
         }
         else {
-            const result = tableData.filter(el => el.firstname.toLowerCase().includes(keyword) || el.middlename?.toLowerCase().includes(keyword) || el.lastname.toLowerCase().includes(keyword) || el.email.toString().toLowerCase().includes(keyword) || el.createdAt?.toString().toLowerCase().includes(keyword) || el.phone?.toLowerCase().includes(keyword) || el.state?.toString().toLowerCase().includes(keyword) || el.country?.toString().toLowerCase().includes(keyword) || el.state?.toString().toLowerCase().includes(keyword))
-            console.log({result})
+            const result = tableData.filter(el => el.firstname.toLowerCase().includes(keyword) || el.middlename?.toLowerCase().includes(keyword) || el.lastname.toLowerCase().includes(keyword) || el.email.toString().toLowerCase().includes(keyword) || el.createdAt?.toString().toLowerCase().includes(keyword) || el.phone?.toLowerCase().includes(keyword) || el.state?.toString().toLowerCase().includes(keyword) || el.country?.toString().toLowerCase().includes(keyword) || el.course?.title?.toString().toLowerCase().includes(keyword))
+            console.log({ result })
             setTableData(prev => [...result])
         }
     }
 
-    
+
 
     return (
         <>
@@ -71,32 +68,40 @@ export default function EnquiryList({ enquiryData }: { enquiryData: EnquiryProps
                         </thead>
                         <tbody className='w-full text-slate-700 dark:text-slate-50 divide-y divide-slate-300 border-y border-y-slate-300 pt-4 pb-0'>
                             {
-                                tableData.map(enquiry => (
-                                    <tr key={enquiry.id} onClick={() => showPreview(enquiry.id)} className='hover:bg-slate-50 dark:hover:bg-slate-900/30'>
-                                        <td>
-                                            <div className="max-w-sm w-max flex items-center gap-2 cursor-pointer p-2">
-                                                <div className="h-7 sm:h-8 w-7 sm:w-8 flex justify-center items-center rounded-full overflow-hidden relative font-bold bg-primary/90 text-white text-xl dark:bg-slate-600/50 -tracking-tighter">{enquiry?.firstname[0]?.toUpperCase()}{enquiry?.lastname[0]?.toUpperCase()}</div>
-                                                <div>
-                                                    <h5 className="text-sm font-medium leading-tight whitespace-nowrap">{enquiry?.firstname} {enquiry?.middlename} {enquiry?.lastname}</h5>
-                                                    <p className="text-xs font-medium opacity-70 text-slate-600 dark:text-slate-50 dark:opacity-100 leading-tight">{enquiry.email}</p>
+                                tableData.length ?
+                                    tableData.map(enquiry => (
+                                        <tr key={enquiry.id} onClick={() => showPreview(enquiry.id)} className='hover:bg-slate-50 dark:hover:bg-slate-900/30'>
+                                            <td>
+                                                <div className="max-w-sm w-max flex items-center gap-2 cursor-pointer px-2">
+                                                    <div className="h-7 sm:h-8 w-7 sm:w-8 flex justify-center items-center rounded-full overflow-hidden relative font-normal bg-primary/90 text-white text-lg dark:bg-slate-600/50 -tracking-[1px]">
+                                                        {enquiry?.firstname[0]?.toUpperCase()}{enquiry?.lastname[0]?.toUpperCase()}</div>
+                                                    <div>
+                                                        <h5 className="text-sm font-medium leading-tight whitespace-nowrap">{enquiry?.firstname} {enquiry?.middlename} {enquiry?.lastname}</h5>
+                                                        <p className="text-xs font-medium opacity-70 text-slate-600 dark:text-slate-50 dark:opacity-100 leading-tight">{enquiry.email}</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td className="align-middle">
-                                            <h4 className="flex justify-center items-center gap-[.2rem] align-middle text-xs py-[.1rem] sm:py-1">{courses.find(course => course.id === enquiry?.courseId)?.title}</h4>
-                                        </td>
-                                        <td className="align-middle">
-                                            <div className="flex justify-center items-center align-middle mx-auto">
-                                                <Link href={`tel:${enquiry.phone}`} className={`bg-sky-100 text-sky-500 text-xs py-[.1rem] sm:py-1 px-3 rounded-sm font-medium`}>{enquiry.phone}</Link>
-                                            </div>
-                                        </td>
-                                        <td className="align-middle">
-                                            <div className="flex justify-center items-center gap-[.2rem] align-middle text-xs py-[.1rem] sm:py-1">
-                                                <FaClock className="text-inherit mt-[.1rem]" /> <p className="">{(enquiry?.createdAt?.toLocaleString())}</p>
-                                            </div>
+                                            </td>
+                                            <td className="align-middle">
+                                                <h4 className="flex justify-start items-center gap-[.2rem] align-middle text-xs py-[.1rem] sm:py-1">{courses.find(course => course.id === enquiry?.courseId)?.title}</h4>
+                                            </td>
+                                            <td className="align-middle">
+                                                <div className="flex justify-center items-center align-middle mx-auto">
+                                                    <Link href={`tel:${enquiry.phone}`} className={`bg-sky-100 text-sky-500 text-xs py-[.1rem] sm:py-1 px-3 rounded-sm font-medium`}>{enquiry.phone}</Link>
+                                                </div>
+                                            </td>
+                                            <td className="align-middle">
+                                                <div className="flex justify-center items-center gap-[.2rem] align-middle text-xs py-[.1rem] sm:py-1">
+                                                    <FaClock className="text-inherit mt-[.1rem]" /> <p className="">{(enquiry?.createdAt?.toLocaleString("en", { dateStyle: "long" }))}</p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    ))
+                                    :
+                                    <tr>
+                                        <td colSpan={4}>
+                                            <h4 className="text-slate-500 text-center dark:text-slate-300">No Record(s) Found</h4>
                                         </td>
                                     </tr>
-                                ))
                             }
                         </tbody>
                     </table>
@@ -104,7 +109,7 @@ export default function EnquiryList({ enquiryData }: { enquiryData: EnquiryProps
             </section>
             <Modal modalRef={previewRef}>
                 <div className='p-5 flex flex-col gap-4'>
-                    <span className="text-[.6rem] sm:text-[.75rem] text-sky-700 bg-sky-200/50 dark:bg-sky-200 p-2 px-[.3rem] rounded-xs uppercase text-center">Enquiry Details Form </span>
+                    <span className="text-[.6rem] sm:text-[.75rem] text-sky-700 bg-sky-200/50 dark:bg-sky-200 p-2 rounded-xs uppercase text-center">Enquiry Details </span>
                     <div className="w-full flex items-center gap-2">
                         <div className={`h-7 sm:h-8 w-7 sm:w-8 flex-shrink-0 flex justify-center items-center rounded-full overflow-hidden relative bg-primary dark:bg-slate-100 text-slate-100 dark:text-slate-600`}>
                             <MdQuestionAnswer className='text-sm sm:text-base' />
@@ -116,7 +121,7 @@ export default function EnquiryList({ enquiryData }: { enquiryData: EnquiryProps
                                     <Link href={`tel:${selectedEnquiry?.phone}`} className="text-slate-400 text-xs py-[.1rem] sm:py-1">{selectedEnquiry?.phone}</Link>
                                 </div>
                                 <div className="flex justify-center items-center gap-[.2rem] align-middle dark:text-slate-100 text-[.6rem]">
-                                    <FaCalendarAlt className="text-inherit opacity-60" /> <p className="">{selectedEnquiry?.createdAt?.toLocaleString("en", {dateStyle: "long"})}</p>
+                                    <FaCalendarAlt className="text-inherit opacity-60" /> <p className="">{selectedEnquiry?.createdAt?.toLocaleString("en", { dateStyle: "long" })}</p>
                                 </div>
                             </div>
                         </div>

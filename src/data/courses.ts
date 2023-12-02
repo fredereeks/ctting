@@ -3,17 +3,17 @@ import { StaticImageData } from 'next/image';
 import { blog_slider1, blog_slider2, category_2, ctti_agile_biz, ctti_analytics, ctti_biz_app, ctti_biz_leadership, ctti_biz_skill, ctti_biz_start, ctti_business, ctti_ccna, ctti_cloud, ctti_cyber, ctti_cybersecurity, ctti_database, ctti_datascience, ctti_dev_ops, ctti_digital_marketing, ctti_excel, ctti_graphics, ctti_graphics_design, ctti_it_essentials, ctti_itil_foundation, ctti_machine_learning, ctti_ms_chart, ctti_msword, ctti_powerbi, ctti_project_management, ctti_project_mgt, ctti_project_pro, ctti_python, ctti_sharepoint, ctti_web_development, exam_announcement, exam_courses,  exam_slider, exam_study, masonry2, masonry8, mobile_apps, } from '../assets/images'
 
 type CoursesProps = {
-    id: string;
-    image: StaticImageData;
-    category: string;
-    title: string;
-    users: number;
-    rating: number;
-    description: string;
-    duration: string;
-    featured: boolean;
-    requisite: string[];
-    contents: string[];
+    id: string
+    image: StaticImageData
+    category: string
+    title: string
+    users: number
+    rating: number
+    description: string
+    duration: string
+    featured: boolean
+    requisite: string[]
+    contents: string[]
 }
 
 export const courses: CoursesProps[] = [

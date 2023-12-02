@@ -19,7 +19,10 @@ export default function ContactForm({ handleSubmit }: { handleSubmit: (data: For
 
 
     async function handleClientSubmit(formData: FormData) {
-        if (!phone)
+        if (!phone && country === "Nigeria") {
+            toast.error("Sorry but we would like to have your phone number", { id: "86249" })
+            return;
+        }
             setPending(true)
         try {
             const data = await handleSubmit(formData);

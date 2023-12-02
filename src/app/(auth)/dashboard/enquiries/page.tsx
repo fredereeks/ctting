@@ -1,11 +1,12 @@
-import type { Metadata } from 'next'
-import React, { ReactElement } from 'react'
+export const revalidate = "60"
 
-import {DashCharts} from '@/app/(auth)/ui'
+import type { Metadata } from 'next'
+import React from 'react'
+
 import EnquiryList from '@/app/(auth)/dashboard/EnquiryList';
 import prisma from '@/lib/prisma'
 
-type EnquiryProps = { id: string; firstname: string; middlename?: string | null; lastname: string; email: string; phone: string | null; message: string; country?: string | null; state?: string | null; courseId: string; createdAt?: Date | string; updatedBy?: string | null; }
+
 
 export const metadata: Metadata = {
   title: 'CTTI e-learning Centre :: Enquiries',
@@ -25,7 +26,7 @@ const fetchEnquiries = async() => {
     //   }
     // }
   })
-  return res;
+  return res as EnquiryProps[];
 
 }
 

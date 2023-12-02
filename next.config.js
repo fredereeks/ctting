@@ -1,9 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    typescript: {
-        ignoreBuildErrors: true,
+    // typescript: {
+    //     ignoreBuildErrors: true,
+    // },
+    experimental: {
+        serverComponentsExternalPackages: ["@prisma/client", "bcryptjs"]
     },
-    output: 'standalone',
+    // output: 'standalone',
     // images: { unoptimized: true },
     // useFileSystemPublicRoutes: false
 }

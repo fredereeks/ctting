@@ -15,6 +15,7 @@ const config: Config = {
         gradient: "rgb(32, 148, 243)",
         sitetext: "#1F1F1F",
         danger: "#f34f7c",
+        success: "#09dba0",
       },
     },
   },

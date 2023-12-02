@@ -1,4 +1,4 @@
-export const individuals: CoachingProps[] = [
+export const individuals: CorporateAndCoachingProps[] = [
     {
         id: "38661",
         title: "Career Assessments and Guidance",

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "prebuild": "node prebuild.ts",
-    "build": "prisma generate && next build && nextjs-standalone-deployer.exe",
+    "build": "prisma generate && next build",
     "export": "next build && next export",
     "start": "next start",
     "lint": "next lint"

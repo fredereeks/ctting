@@ -18,7 +18,7 @@ export default function LoginPage() {
             <div className="md:col-span-2">
                 <BreadCrumb page={"Login"} />
             </div>
-            <div className="relative flex flex-col justify-center">
+            <div className="relative flex flex-col justify-center p-4">
                 <LoginForm  />
             </div>
             <div className="relative hidden md:flex bg-primary h-[500px]">

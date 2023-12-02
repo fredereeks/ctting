@@ -86,13 +86,29 @@ type DropdownProps = {
     resources: string | boolean
 }
 
-type EnquiryProps = { id: string; firstname: string; middlename: string | null; lastname: string; email: string; phone: string | null; message: string; country: string | null; state: string | null; courseId: string; createdAt: Date; updatedAt: Date; updatedBy: string | null; }
+type EnquiryProps = { id: string; firstname: string; middlename?: string | null; lastname: string; email: string; phone: string | null; message: string; country?: string | null; state?: string | null; courseId: string; createdAt?: Date | string; updatedAt?: Date | string; updatedBy?: string | null; course?: Course }
 
 type LinkCardType = {
     title: string
     link: string
     sublinks: [] | SublinksProps[]
     onClick: (name: string) => void
+}
+
+type MessageProps = {
+    id: string
+    firstname: string
+    middlename: string
+    lastname: string
+    email: string
+    phone: string
+    country: string
+    state: string
+    message: string
+    status: "Read" | "Unread"
+    createdAt?: string | Date 
+    updatedAt?: string | Date 
+    updatedBy?: string
 }
 
 type NewsCardProps = {
@@ -168,6 +184,8 @@ type UserProps = {
     password?: string
     image?: string
     address?: string
+    country?: string
+    state?: string
     type?: "Admin" | "User"
     status?: "Pending" | "Active" | "Suspended"
     token?: string

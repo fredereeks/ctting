@@ -24,14 +24,14 @@ export const navLinks : NavLinkProps[] = [
         link: '/dashboard/enquiries',
         icon: <MdQuestionAnswer className='text-inherit ' />
     },
-    {
-        id: 282347,
-        title: 'Admins',
-        // background: 'bg-slate-200',
-        element: <span className='border border-slate-500 bg-slate-200 text-slate-500 text-sm sm:text-base h-6 w-6 rounded-full flex justify-center items-center'><IoMailUnreadOutline className='text-inherit ' /></span>,
-        link: '/dashboard/admins',
-        icon: <IoPeopleOutline className='text-inherit ' />
-    },
+    // {
+    //     id: 282347,
+    //     title: 'Admins',
+    //     // background: 'bg-slate-200',
+    //     element: <span className='border border-slate-500 bg-slate-200 text-slate-500 text-sm sm:text-base h-6 w-6 rounded-full flex justify-center items-center'><IoMailUnreadOutline className='text-inherit ' /></span>,
+    //     link: '/dashboard/admins',
+    //     icon: <IoPeopleOutline className='text-inherit ' />
+    // },
     {
         id: 282348,
         title: 'Courses',
@@ -57,12 +57,12 @@ export const navLinks : NavLinkProps[] = [
     //     link: '/dashboard/loans',
     //     icon: <FaSackDollar className='text-inherit ' />
     // },
-    // {
-    //     id: 282349,
-    //     title: 'Profile',
-    //     // background: 'bg-indigo-200',
-    //     element: <span className='border border-slate-500 bg-indigo-200 text-indigo-500 text-sm sm:text-base h-6 w-6 rounded-full flex justify-center items-center'><IoClipboardOutline className='text-inherit ' /></span>,
-    //     link: '/dashboard/profile',
-    //     icon: <IoClipboardOutline className='text-inherit ' />
-    // },
+    {
+        id: 282349,
+        title: 'Profile',
+        // background: 'bg-indigo-200',
+        element: <span className='border border-slate-500 bg-indigo-200 text-indigo-500 text-sm sm:text-base h-6 w-6 rounded-full flex justify-center items-center'><IoClipboardOutline className='text-inherit ' /></span>,
+        link: '/dashboard/profile',
+        icon: <IoClipboardOutline className='text-inherit ' />
+    },
 ]

@@ -4,19 +4,25 @@ import '@/assets/globals.css'
 import 'aos/dist/aos.css';
 import { Toaster } from 'react-hot-toast'
 import {DashLayout} from '@/app/(auth)/ui'
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/lib/authOptions';
+import { redirect } from 'next/navigation';
 
 const roboto = Roboto({ subsets: ['latin'], weight: ["100", "300", "400", "500", "700", "900"] })
 
-// export const metadata: Metadata = {
-//   title: 'CTTI e-learning Centre :: Home of IT Knowledge',
-//   description: 'At CTTI, we are committed to nurturing the next generation of IT professionals and supporting organisations in their digital transformation journeys',
-// }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+
+  const session = await getServerSession(authOptions)
+
+  if(!session) {
+    redirect("/auth/signin")
+  }
+
   return (
     <html lang="en">
       <body className={`bg-slate-50 min-h-screen pt-10 ${roboto.className}`}>

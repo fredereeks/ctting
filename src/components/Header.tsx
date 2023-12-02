@@ -99,7 +99,7 @@ function Header() {
                         }
                     </ul>
                     <div className="lg:ml-auto flex flex-col justify-center pt-1 h-full w-full lg:w-max md:flex-row lg:gap-3">
-                        <Link href="/auth/login" className="text-sm grid place-items-center text-primary lg:rounded-md h-10 lg:h-8 w-full lg:w-max px-2 lg:px-4 relative border border-primary hover:bg-primary/90 hover:text-white">Login
+                        <Link href="/auth/signin" className="text-sm grid place-items-center text-primary lg:rounded-md h-10 lg:h-8 w-full lg:w-max px-2 lg:px-4 relative border border-primary hover:bg-primary/90 hover:text-white">Login
                         </Link>
                         <Link href="/enquiry" className="text-sm grid place-items-center text-white bg-primary hover:bg-primary/90 lg:rounded-md h-10 lg:h-8 w-full lg:w-max px-2 lg:px-4 relative">Make Enquiry
                         </Link>

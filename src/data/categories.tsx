@@ -1,20 +1,6 @@
-import { StaticImageData } from 'next/image';
 import {FaBriefcase, FaBuilding, FaCloudMeatball,  FaMicrosoft, FaNetworkWired, FaPalette, FaDatabase, FaProjectDiagram} from 'react-icons/fa' 
 import {IoIosTrendingUp, IoIosCode, IoIosLaptop, } from 'react-icons/io' 
 
-type CoursesProps = {
-    id: string;
-    image: StaticImageData;
-    category: string;
-    title: string;
-    users: number;
-    rating: number;
-    description: string;
-    duration: string;
-    featured: boolean;
-    requisite: string[];
-    contents: string[];
-}
 export const categories: CategoryProps[] = [
     {
         id: 3894,

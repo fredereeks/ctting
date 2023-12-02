@@ -49,10 +49,10 @@ export default function DashHeader({ handleClick, darkMode, toggleDarkMode }: IH
                     }
                 </button>
                 <div className="relative">
-                    <label htmlFor='dropdown' className='cursor-pointer dark:ring dark:ring-slate-400 ring-offset-base-100 ring-offset-1 h-8 w-8 flex justify-center items-center rounded-full overflow-hidden relative bg-primary dark:bg-slate-600/50'>
+                    <Link href="/dashboard/profile" className='cursor-pointer dark:ring dark:ring-slate-400 ring-offset-base-100 ring-offset-1 h-8 w-8 flex justify-center items-center rounded-full overflow-hidden relative bg-primary dark:bg-slate-600/50'>
                         <Image src={user?.image} alt={`${firstname} ${lastname}`} fill={true} className="absolute left-0 top-0 object-cover w-full h-full" /> <IoCaretDown
                             className="text-sm font-light opacity-90 text-inherit" />
-                    </label>
+                    </Link>
                     {/* <input type="checkbox" className="peer hidden" id="dropdown" />
                     <div className="max-h-0 peer-checked:max-h-[1000%] absolute top-full bg-white shadow z-50 right-0 overflow-hidden transition-all duration-300">
                         <ul className="flex flex-col dark:bg-[#dce7f7] max-w-[10rem] z-5 p-2 shadow bg-base-100 rounded-md w-52">

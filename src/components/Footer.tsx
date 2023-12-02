@@ -7,7 +7,7 @@ import Image from 'next/image'
 const Footer = () => {
   return (
         <footer className="bg-white relative py-10 px-4">
-            <div className="container pb-10 mx-auto flex flex-col sm:flex-row justify-center md:justify-start md:grid md:grid-cols-3 lg:grid-cols-4 md:gap-4 gap-6">
+            <div className="container pb-10 mx-auto flex flex-col sm:flex-row justify-center md:grid md:grid-cols-3 md:gap-4 gap-6">
                 <div className="flex flex-col">
                     <Link href="/" className='w-[70px] h-[70px] text-gray-100'>
                         <Image src={logo} alt="CTTI Logo" className="w-full h-[60px] object-contain sm:object-contain" />
@@ -26,7 +26,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="flex flex-col">
-                    <h3 className="text-md md:text-xl heading pb-2 uppercase">Working Hours</h3>
+                    <h3 className="text-primary font-bold text-lg md:text-xl pb-2 uppercase">Working Hours</h3>
                     <div className="flex flex-col gap-1">
                         <p className="text-xs md:text-sm text-slate-600 text-justify">Monday - Friday: 8:00AM - 5:00PM.</p>
                         <p className="text-xs md:text-sm text-slate-600 text-justify">Saturday: 9:00AM - 2:00PM.</p>
@@ -34,7 +34,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="flex flex-col">
-                    <h3 className="text-md md:text-xl heading pb-2 uppercase">WE ARE HERE</h3>
+                    <h3 className="text-primary font-bold text-lg md:text-xl pb-2 uppercase">WE ARE HERE</h3>
                     <div className="flex flex-col gap-1">
                         <p className="text-xs md:text-sm text-slate-600 text-justify">House 2, &apos;A&apos; Close, 45 Road, Off 4th Avenue, Gwarinpa, Abuja</p>
                          <p className="text-xs md:text-sm text-slate-600 text-justify">+2349152200170</p>

@@ -15,19 +15,6 @@ export const metadata: Metadata = {
   description: 'At CTTI, we are committed to nurturing the next generation of IT professionals and supporting organisations in their digital transformation journeys',
 }
 
-
-export const handleSubscription = async (data: FormData) => {
-  "use server"
-  const email = data.get("email")?.valueOf() || '';
-  if (!email) return {
-    error: true,
-    message: 'No email supplied'
-  }
-  else {
-    // const savedUser = await 
-  }
-}
-
 // data-aos-duration="1000" data-aos-delay="1000" data-aos="fade-left"
 // data-aos-duration="1000" data-aos-delay="1000" data-aos="fade-up-right"
 // data-aos-duration="1000" data-aos-delay="1000" data-aos="fade-down-left"
@@ -111,8 +98,6 @@ export default async function Home() {
           </div>
           <div className="py-5 grid grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-8">
             {
-              // loading ? <Skeleton key={891} type={'course'} total={3} />
-              // : 
               categories.slice(0, 6).map((category,i) => (<span key={category.id} data-aos-duration="1000" data-aos-delay={`${i+1}00`} data-aos={i % 2 === 0 ? 'zoom-in-right' : 'zoom-in-left'}><CategoryCard key={category.id} {...category} /></span>))
             }
           </div>
@@ -128,7 +113,7 @@ export default async function Home() {
             <h3 data-aos-duration="1000" data-aos-delay="500" data-aos="zoom-in-up" className="heading text-white">Subscribe to our Newsletter</h3>
             <p data-aos-duration="1000" data-aos-delay="1000" data-aos="zoom-in-left" className="normal-text text-white py-2 pr-2">Be the first to learn about our latest updates: discount, new courses and trends </p>
           </div>
-            <SubscriptionForm handleSubscription={handleSubscription} />
+            <SubscriptionForm key={'82093207'} />
         </div>
       </section>
       <PartnerSlide key={898} />

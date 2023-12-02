@@ -7,7 +7,6 @@ import prisma from '@/lib/prisma'
 import { courses } from '@/data';
 import { onlyUnique } from '@/utils/findUnique';
 
-type EnquiryProps = { id: string; firstname: string; middlename?: string | null; lastname: string; email: string; phone: string | null; message: string; country?: string | null; state?: string | null; courseId: string; createdAt?: Date | string; updatedAt?: Date | string; updatedBy?: string | null; }
 
 export const metadata: Metadata = {
   title: 'CTTI e-learning Centre :: Dashboard',
@@ -31,16 +30,12 @@ const fetchEnquiries = async() => {
 
 }
 const fetchUsers = async() => {
-  const res  = await prisma.user.findMany({
-    where: {
-      type: "Admin",
-    },
-    orderBy: {
-      createdAt: "desc"
-    },
-  })
-  return res;
-
+  const admins  = await prisma.user.findMany({ where: { type: "Admin" }, orderBy: { createdAt: "desc" } })
+  const users  = await prisma.user.findMany({ where: { type: "User" }, orderBy: { createdAt: "desc" } })
+  const allUsers = await prisma.user.groupBy({ by: ['type'], _count: { _all: true }, })
+  const userTypes = await prisma.$queryRaw`SELECT COUNT(us.id) AS totalUsers, COUNT(ad.id) AS totalAdmins, COUNT(ins.id) AS totalInstructors FROM user us JOIN user ad JOIN user ins`;
+  console.log({allUsers: allUsers.map(el => console.log({el})), userTypes})
+  return {users, admins};
 }
 
 export default async function Dashboard() {
@@ -54,22 +49,22 @@ export default async function Dashboard() {
       <section className="scrollbar x-scrollbar bg-white dark:bg-[#dbf0f724] dark:shadow-black shadow-slate-200 shadow-md rounded-lg p-4 relative grid grid-cols-2 md:grid-cols-4 gap-4">
         <div className="grid place-items-center px-4">
           <div className="text-sitetext/80 text-sm dark:text-slate-400">Courses</div>
-          <div className="text-slate-700 text-xl sm:text-3xl md:text-2xl lg:text-3xl tracking-tighter dark:text-slate-200">{courses.length}</div>
+          <div className="font-bold text-slate-700 text-xl sm:text-3xl md:text-3xl lg:text-4xl tracking-tighter dark:text-slate-200">{courses.length}</div>
           {/* <div className="stat-desc text-xs dark:text-slate-500 whitespace-pre-wrap text-center">From Last Month</div> */}
         </div>
         <div className="grid place-items-center px-4">
           <div className="text-sitetext/80 text-sm dark:text-slate-400">Categories</div>
-          <div className="text-slate-700 text-xl sm:text-3xl md:text-2xl lg:text-3xl tracking-tighter dark:text-slate-200">{courses.map(course => course.category).filter(onlyUnique).length}</div>
+          <div className="font-bold text-slate-700 text-xl sm:text-3xl md:text-3xl lg:text-4xl tracking-tighter dark:text-slate-200">{courses.map(course => course.category).filter(onlyUnique).length}</div>
           {/* <div className="stat-desc text-xs dark:text-slate-500 whitespace-pre-wrap text-center">From 35 Members</div> */}
         </div>
         <div className="grid place-items-center px-4">
           <div className="text-sitetext/80 text-sm dark:text-slate-400">Enquiries</div>
-          <div className="text-slate-700 text-xl sm:text-3xl md:text-2xl lg:text-3xl tracking-tighter dark:text-slate-200">{enquiryData.length}</div>
+          <div className="font-bold text-slate-700 text-xl sm:text-3xl md:text-3xl lg:text-4xl tracking-tighter dark:text-slate-200">{enquiryData.length}</div>
           {/* <div className="stat-desc text-xs dark:text-slate-500 whitespace-pre-wrap text-center">Since last week</div> */}
         </div>
         <div className="grid place-items-center px-4">
           <div className="text-sitetext/80 text-sm dark:text-slate-400">Total Admins</div>
-          <div className="text-slate-700 text-xl sm:text-3xl md:text-2xl lg:text-3xl tracking-tighter dark:text-slate-200">{totalUsers.length}</div>
+          <div className="font-bold text-slate-700 text-xl sm:text-3xl md:text-3xl lg:text-4xl tracking-tighter dark:text-slate-200">{totalUsers.admins.length}</div>
           {/* <div className="stat-desc text-xs dark:text-slate-500 whitespace-pre-wrap text-center">5+ since last week</div> */}
         </div>
       </section>
