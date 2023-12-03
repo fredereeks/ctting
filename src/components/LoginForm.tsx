@@ -37,7 +37,7 @@ export default function LoginForm() {
             // res.error ? toast.error(res.message, { id: "82046" }) : toast.success(res.message, { id: "82046" })
             if (res?.ok) toast.success(`Welcome Back ${email}`, { id: "82046" })
             else {
-                if(res?.error === "CredentialSign") toast.error("Invalid credentials supplied, please, try again", { id: "82046", duration: 4000 })
+                if(res?.error === "CredentialsSignin") toast.error("Invalid credentials supplied, please, try again", { id: "82046", duration: 4000 })
                 else toast.error(res?.error || "Invalid credentials supplied, please, try again", { id: "82046" })
             }
         } catch (error) {

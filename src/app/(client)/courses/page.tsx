@@ -3,10 +3,9 @@ export const dynamic = 'force-static', revalidate = 'force-cache'
 import { BreadCrumb } from '@/components'
 import CourseClient from '@/components/CourseClient'
 import { categories, courses } from '@/data'
-import db from '@/utils/db'
+// import db from '@/utils/db'
 import { randomNumber } from '@/utils/randomNumber'
-import Image, { StaticImageData } from 'next/image'
-import Link from 'next/link'
+import { StaticImageData } from 'next/image'
 
 const fetchCourses = async () => {
     const coursesData = await courses;

@@ -30,6 +30,7 @@
     "react-country-region-selector": "^3.6.1",
     "react-dom": "^18",
     "react-google-charts": "^4.0.1",
+    "react-gtm-module": "^2.0.11",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.12.0",
     "react-phone-number-input": "^3.3.7",

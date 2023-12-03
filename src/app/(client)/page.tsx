@@ -43,9 +43,9 @@ export default async function Home() {
         <div data-aos-duration="1000" data-aos-delay="500" data-aos="fade-left" className="container mx-auto justify-center grid grid-cols-2 md:grid-cols-4 py-10 px-4">
           {
             [
-              [111, <span key={7035111}><Counter key={111} speed="fast" end={2140} tag={'K+'} className='text-primary' /></span>, "Online Learners", "border-2 border-r-primary-50/30"],
-              [112, <span key={7035112}><Counter key={112} speed="slow" end={50} tag={'+'} className='text-primary' /></span>, "Expert Instructors", "md:border-2 md:border-r-primary-50/30"],
-              [113, <span key={7035113}><Counter key={113} speed="normal" end={2000} tag={'K+'} className='text-primary' /></span>, "Validated Students", "border-2 border-r-primary-50/30"],
+              [111, <span key={7035111}><Counter key={111} speed="slow" end={540} tag={'+'} className='text-primary' /></span>, "Online Learners", "border-2 border-r-primary-50/30"],
+              [112, <span key={7035112}><Counter key={112} speed="slow" end={30} tag={'+'} className='text-primary' /></span>, "Expert Instructors", "md:border-2 md:border-r-primary-50/30"],
+              [113, <span key={7035113}><Counter key={113} speed="slow" end={600} tag={'+'} className='text-primary' /></span>, "Validated Students", "border-2 border-r-primary-50/30"],
               [114, <span key={7035114}><Counter key={114} speed="slow" end={67} tag={'+'} className='text-primary' /></span>, "Trendy Courses", "border-0"],
             ].map(([id, stat, text, border]) => (
               <aside key={id.toString()} className={`flex flex-col p-3 items-center justify-center gap-3 text-site  border-transparent ${border}`}>
