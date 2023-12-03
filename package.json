@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "next dev",
     "prebuild": "node prebuild.ts",
-    "build": "prisma generate && next build",
+    "vercel-build": "prisma generate && next build",
+    "build": "next build",
     "export": "next build && next export",
     "start": "next start",
     "lint": "next lint"
